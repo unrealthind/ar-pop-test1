@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AR.js and A-Frame Example with Transparency Control</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <style>
-      #transparencySlider {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 100;
-        width: 200px; /* Adjust width as needed */
-      }
-    </style>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <input id="transparencySlider" type="range" min="0" max="1" step="0.01" value="1">
-    <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <a-entity id="model1" gltf-model="url(static.glb)" scale="0.1 0.1 0.1" position="0 0 0"></a-entity>
-        <a-entity id="model2" gltf-model="url(dynalpha.glb)" scale="0.1 0.1 0.1" position="0 0 0" material="opacity: 1; transparent: true;"></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+<head>
+  <title>AR.js and A-Frame Example with Transparency Control</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <style>
+    #transparencySlider {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      width: 200px; /* Adjust width as needed */
+    }
+  </style>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <input id="transparencySlider" type="range" min="0" max="1" step="0.01" value="1">
+  <a-scene embedded arjs='sourceType: webcam; video: { facingMode: environment, width: 1280, height: 720 };'>
+    <a-marker preset="hiro">
+      <a-entity id="model1" gltf-model="url(mini-model-test1.glb)" scale="0.1 0.1 0.1" position="0 0 0"></a-entity>
+      <a-entity id="model2" gltf-model="url(mini-model-test2.glb)" scale="0.1 0.1 0.1" position="0 0 0" material="opacity: 1; transparent: true;"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
 
-    <script>
-      document.getElementById('transparencySlider').addEventListener('input', function(event) {
-        var opacityValue = event.target.value;
-        document.querySelector('#model2').setAttribute('material', 'opacity', opacityValue);
-      });
-    </script>
-  </body>
+  <script>
+    document.getElementById('transparencySlider').addEventListener('input', function(event) {
+      var opacityValue = event.target.value;
+      document.querySelector('#model2').setAttribute('material', 'opacity', opacityValue);
+    });
+  </script>
+</body>
 </html>
