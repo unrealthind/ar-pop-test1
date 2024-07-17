@@ -27,7 +27,10 @@
   <script>
     document.getElementById('transparencySlider').addEventListener('input', function(event) {
       var opacityValue = event.target.value;
-      document.querySelector('#model2').setAttribute('material', 'opacity', opacityValue);
+      console.log('Slider value:', opacityValue); // Debugging: log the slider value
+      var model2 = document.querySelector('#model2');
+      console.log('Model 2:', model2); // Debugging: log the model element
+      model2.setAttribute('material', 'opacity', opacityValue);
     });
   </script>
 </body>
