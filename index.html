@@ -18,8 +18,8 @@
   <input id="transparencySlider" type="range" min="0" max="1" step="0.01" value="1">
   <a-scene embedded arjs='sourceType: webcam; video: { facingMode: environment, width: 1280, height: 720 };'>
     <a-marker preset="hiro">
-      <a-entity id="model1" gltf-model="url(mini-model-test1.glb)" scale="0.1 0.1 0.1" position="0 0 0"></a-entity>
-      <a-entity id="model2" gltf-model="url(mini-model-test2.glb)" scale="0.1 0.1 0.1" position="0 0 0" material="opacity: 1; transparent: true;"></a-entity>
+      <a-entity id="model1" gltf-model="url(static.glb)" scale="0.1 0.1 0.1" position="0 0 0"></a-entity>
+      <a-entity id="model2" gltf-model="url(dynalpha.glb)" scale="0.1 0.1 0.1" position="0 0 0" material="opacity: 1; transparent: true;"></a-entity>
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
